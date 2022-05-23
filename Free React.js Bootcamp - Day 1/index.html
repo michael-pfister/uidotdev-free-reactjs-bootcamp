@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First React App</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      const name = 'Michael';
+      const handle = '@stracciatella27';
+
+      function NameComponent(props) {
+        return <h1>{props.name}</h1>; // JSX converts html syntax to React.createElement() invokations
+        /* return React.createElement('h1', null, props.name); */
+      }
+
+      function HandleComponent(props) {
+        return <h3>{props.handle}</h3>;
+        /* return React.createElement('h3', null, props.handle); */
+      }
+
+      // const nameElement = React.createElement('h1', null, name);
+      // const handleElement = React.createElement('h3', null, handle);
+      /* const wrapperElement = React.createElement(
+        'div',
+        null,
+        React.createElement(NameComponent, { name: name }),
+        React.createElement(HandleComponent, { handle: handle }),
+      ); */
+
+      function App() {
+        return (
+          <div id="container">
+            <NameComponent name={name} />
+            <HandleComponent handle={handle} />
+            <img
+              src="./Babel.png"
+              alt="Babel converts JSX into JavaScript"
+              width="100%"
+            />
+          </div>
+        );
+      }
+
+      console.log(App);
+
+      /* ReactDOM.render(wrapperElement, document.getElementById('app')); */ // React 17 outdated
+      const root = ReactDOM.createRoot(document.getElementById('app'));
+      root.render(React.createElement(App));
+    </script>
+  </body>
+</html>
