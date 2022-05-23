@@ -2,7 +2,7 @@
 
 ## About
 
-This is an additional bootcamp i took in order to have a deeper understanding of how React works
+This is an additional bootcamp I took in order to have a deeper understanding of how React works.
 
 ## Link to Bootcamp
 
